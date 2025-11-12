@@ -1,10 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, MapPin, Calendar } from "lucide-react";
+import { RippleContainer } from "@/components/RippleContainer";
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-4 bg-background">
+    <RippleContainer className="py-20 px-4 bg-background" id="experience">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 space-y-4 animate-in fade-in duration-700">
           <h2 className="text-4xl md:text-6xl font-bold">
@@ -86,7 +87,7 @@ const Experience = () => {
           </Card>
         </div>
       </div>
-    </section>
+    </RippleContainer>
   );
 };
 

@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { RippleContainer } from "@/components/RippleContainer";
 import heroBackground from "@/assets/hero-bg.jpg";
 import profileImage from "@/assets/profile.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <RippleContainer className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -77,7 +78,7 @@ const Hero = () => {
           <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
         </div>
       </div>
-    </section>
+    </RippleContainer>
   );
 };
 

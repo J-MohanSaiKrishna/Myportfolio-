@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { GraduationCap, Calendar, Award } from "lucide-react";
+import { RippleContainer } from "@/components/RippleContainer";
 
 const Education = () => {
   const education = [
@@ -33,7 +34,7 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 px-4 bg-background">
+    <RippleContainer className="py-20 px-4 bg-background" id="education">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 space-y-4 animate-in fade-in duration-700">
           <h2 className="text-4xl md:text-6xl font-bold">
@@ -92,7 +93,7 @@ const Education = () => {
           ))}
         </div>
       </div>
-    </section>
+    </RippleContainer>
   );
 };
 

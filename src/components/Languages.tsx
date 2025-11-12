@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Languages as LanguagesIcon } from "lucide-react";
+import { RippleContainer } from "@/components/RippleContainer";
 
 const Languages = () => {
   const languages = [
@@ -9,7 +10,7 @@ const Languages = () => {
   ];
 
   return (
-    <section id="languages" className="py-20 px-4 section-gradient">
+    <RippleContainer className="py-20 px-4 bg-background" id="languages">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16 space-y-4 animate-in fade-in duration-700">
           <h2 className="text-4xl md:text-6xl font-bold">
@@ -46,7 +47,7 @@ const Languages = () => {
           ))}
         </div>
       </div>
-    </section>
+    </RippleContainer>
   );
 };
 

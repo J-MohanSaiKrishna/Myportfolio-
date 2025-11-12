@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Phone, MapPin } from "lucide-react";
+import { RippleContainer } from "@/components/RippleContainer";
 
 const Contact = () => {
   const contactInfo = [
@@ -35,7 +36,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 bg-background">
+    <RippleContainer className="py-20 px-4 bg-background">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16 space-y-4 animate-in fade-in duration-700">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
@@ -119,7 +120,7 @@ const Contact = () => {
           </div>
         </Card>
       </div>
-    </section>
+    </RippleContainer>
   );
 };
 
