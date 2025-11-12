@@ -45,7 +45,7 @@ const Hero = () => {
               <div className="inline-block">
                 <p className="text-accent font-semibold text-lg mb-2 tracking-wide uppercase">Welcome to my portfolio</p>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white text-shadow">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white text-shadow whitespace-nowrap">
                 Mohan Sai Krishna
               </h1>
             </div>
