@@ -102,7 +102,7 @@ const Contact = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white/10"
+                className="bg-white text-primary hover:bg-white/90 shadow-lg"
                 asChild
               >
                 <a
