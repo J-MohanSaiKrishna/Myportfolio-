@@ -51,6 +51,10 @@ const Hero = () => {
             </div>
 
             <div className="space-y-4 text-white/90 text-lg leading-relaxed">
+              <p className="text-accent font-semibold text-lg">
+                I am a <span className="bg-gradient-to-r from-yellow-300 via-orange-300 to-pink-300 text-transparent bg-clip-text font-extrabold">Full-Stack Developer</span>
+                <span className="hidden md:inline"> — building with React, Node.js & AWS</span>
+              </p>
             </div>
 
             <div className="pt-4" />
