@@ -65,7 +65,7 @@ const Skills = () => {
   ];
 
   return (
-    <RippleContainer className="py-20 px-4 section-gradient" id="skills">
+    <RippleContainer className="py-20 px-4 bg-gradient-to-br from-purple-950/15 via-background to-purple-900/10" id="skills">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4 animate-in fade-in duration-700">
           <h2 className="text-4xl md:text-6xl font-bold">

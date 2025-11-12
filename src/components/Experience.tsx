@@ -5,7 +5,7 @@ import { RippleContainer } from "@/components/RippleContainer";
 
 const Experience = () => {
   return (
-    <RippleContainer className="py-20 px-4 bg-background" id="experience">
+    <RippleContainer className="py-20 px-4 bg-gradient-to-br from-blue-950/20 via-background to-blue-900/10" id="experience">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 space-y-4 animate-in fade-in duration-700">
           <h2 className="text-4xl md:text-6xl font-bold">
