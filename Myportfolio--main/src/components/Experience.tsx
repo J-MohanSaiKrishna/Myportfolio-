@@ -24,7 +24,7 @@ const Experience = () => {
                   <Briefcase className="w-8 h-8 text-white" />
                 </div>
               </div>
-              
+
               <div className="flex-grow space-y-4">
                 <div>
                   <div className="flex flex-wrap items-center gap-3 mb-2">
@@ -33,7 +33,7 @@ const Experience = () => {
                     </h3>
                     <Badge className="gradient-bg">Internship</Badge>
                   </div>
-                  
+
                   <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
                     <div className="flex items-center gap-2">
                       <MapPin className="h-4 w-4" />

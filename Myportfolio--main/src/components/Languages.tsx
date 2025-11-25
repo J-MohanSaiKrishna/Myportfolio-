@@ -23,8 +23,8 @@ const Languages = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {languages.map((language, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="p-6 card-hover glass-effect text-center animate-in fade-in duration-500"
               style={{ animationDelay: `${index * 150}ms` }}
             >

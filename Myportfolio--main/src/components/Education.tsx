@@ -58,7 +58,7 @@ const Education = () => {
                     <edu.icon className="w-8 h-8 text-white" />
                   </div>
                 </div>
-                
+
                 <div className="flex-grow space-y-3">
                   <div>
                     <h3 className="text-2xl font-bold text-foreground">
@@ -70,12 +70,12 @@ const Education = () => {
                       </p>
                     )}
                   </div>
-                  
+
                   <div className="space-y-2">
                     <p className="text-lg font-medium text-foreground">
                       {edu.institution}, {edu.location}
                     </p>
-                    
+
                     <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center gap-2">
                         <Calendar className="h-4 w-4" />

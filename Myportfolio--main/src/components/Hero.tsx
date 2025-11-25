@@ -1,11 +1,33 @@
 import { Button } from "@/components/ui/button";
 import { RippleContainer } from "@/components/RippleContainer";
-import profileImage from "@/assets/profile.jpg";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Hero: React.FC = () => {
+  const quotes = [
+    "Crafting digital experiences from database to user interface — one elegant solution at a time.",
+    "Bridging frontend beauty with backend power to build scalable, robust applications.",
+    "Where creativity meets code: transforming ideas into full-stack reality.",
+    "From pixels to APIs, architecting the complete web development journey.",
+    "Building the future, one stack at a time — React, Node.js, and beyond.",
+    "Turning coffee into code and problems into innovative full-stack solutions.",
+    "Mastering both sides of the web to deliver seamless, end-to-end experiences.",
+    "Code is poetry, and I write in both frontend and backend languages.",
+    "Creating digital ecosystems where frontend elegance meets backend efficiency.",
+    "Full-stack mindset: thinking in components, databases, and everything in between."
+  ];
+
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+    }, 4000); // Change quote every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [quotes.length]);
+
   return (
-    <RippleContainer className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <RippleContainer className="relative min-h-screen flex items-center justify-center overflow-hidden" id="home">
       {/* unified background: deep indigo + soft texture */}
       <div className="absolute inset-0 -z-20 bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-950" />
 
@@ -19,35 +41,65 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-28">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Profile */}
-          <div className="flex justify-center md:justify-end order-1 md:order-2">
-            <div className="relative">
-              <div className="absolute inset-0 transform translate-x-1 translate-y-1 rounded-full bg-gradient-to-br from-indigo-600 to-violet-500 opacity-6 blur-2xl" />
-              <div className="relative w-72 h-72 rounded-full overflow-hidden border-2 border-white/6 shadow-[0_20px_40px_rgba(2,6,23,0.6)]">
-                <img src={profileImage} alt="Mohan Sai Krishna" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute -bottom-3 -right-3 bg-white/6 backdrop-blur-md border border-white/8 rounded-lg px-4 py-2 shadow-md">
-                <p className="text-xs font-medium text-white">Available for hire</p>
-              </div>
-            </div>
-          </div>
-
+        <div className="flex justify-center items-center">
           {/* Content */}
-          <div className="text-center md:text-left space-y-6 order-2 md:order-1">
-            <p className="text-sm text-indigo-300 font-semibold uppercase tracking-wide">Welcome to my portfolio</p>
+          <div className="text-center space-y-6">
+            {/* Creator Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 backdrop-blur-sm border border-indigo-400/30 rounded-full animate-in fade-in duration-700 shadow-lg shadow-indigo-500/20">
+              <div className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
+              <span className="text-sm text-indigo-200 font-medium">Creator of Eduverse</span>
+            </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
-              Mohan Sai Krishna
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight relative">
+              {"Mohan Sai Krishna".split("").map((letter, index) => (
+                <span
+                  key={index}
+                  className="inline-block animate-in fade-in slide-in-from-bottom-4 hover:text-indigo-300 transition-colors duration-200"
+                  style={{
+                    animationDelay: `${index * 0.05}s`,
+                    animationDuration: '0.6s',
+                    animationFillMode: 'both'
+                  }}
+                >
+                  {letter === " " ? "\u00A0" : letter}
+                </span>
+              ))}
+              {/* Animated Highlight Bar */}
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-indigo-400 to-transparent rounded-full">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent rounded-full animate-pulse" />
+              </div>
             </h1>
 
-            <p className="text-lg text-slate-200 max-w-xl">
-              I’m a{" "}
-              <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-300 to-pink-300">
-                Full-Stack Developer
-              </span>
-              {` — building reliable apps with React, Node.js & cloud services.`}
+            {/* Signature One-Liner */}
+            <p className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto italic animate-in fade-in duration-700" style={{ animationDelay: '0.9s' }}>
+              "Crafting intelligent experiences that learn from you."
             </p>
+
+            <div className="min-h-[100px] flex items-center justify-center overflow-hidden">
+              <div className="text-lg text-slate-200 max-w-2xl">
+                <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-300 to-pink-300">
+                  Full-Stack Developer
+                </span>
+                {" — "}
+                <div className="inline-block relative overflow-hidden h-[80px] align-middle" style={{ minWidth: '500px' }}>
+                  <div
+                    className="transition-transform duration-700 ease-in-out"
+                    style={{
+                      transform: `translateY(-${currentQuoteIndex * 80}px)`,
+                    }}
+                  >
+                    {quotes.map((quote, index) => (
+                      <div
+                        key={index}
+                        className="h-[80px] flex items-center justify-start"
+                      >
+                        <span className="inline-block">{quote}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 pt-2">
               <Button

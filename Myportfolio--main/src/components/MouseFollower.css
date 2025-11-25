@@ -1,0 +1,39 @@
+.mouse-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.5) 0%, rgba(139, 92, 246, 0.3) 50%, transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.6),
+        0 0 40px rgba(139, 92, 246, 0.4);
+    transition: width 0.2s ease, height 0.2s ease;
+}
+
+/* Pulse animation for the follower */
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.6),
+            0 0 40px rgba(139, 92, 246, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(99, 102, 241, 0.8),
+            0 0 60px rgba(139, 92, 246, 0.6);
+    }
+}
+
+.mouse-follower {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Hide on mobile/touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .mouse-follower {
+        display: none;
+    }
+}
