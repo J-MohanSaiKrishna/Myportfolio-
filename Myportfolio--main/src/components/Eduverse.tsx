@@ -16,8 +16,34 @@ const Eduverse = () => {
     ];
 
     return (
-        <RippleContainer className="py-20 px-4 bg-gradient-to-br from-blue-500/25 via-background to-indigo-500/20" id="eduverse">
-            <div className="max-w-6xl mx-auto">
+        <RippleContainer className="py-20 px-4 relative overflow-hidden bg-black" id="eduverse">
+            {/* Animated Background */}
+            <div
+                className="absolute inset-0 animate-bg-drift"
+                style={{
+                    backgroundImage: "url('/src/assets/ai-network-bg.jpg')",
+                    backgroundSize: '120%',
+                    backgroundPosition: 'center center',
+                    backgroundRepeat: 'no-repeat',
+                    opacity: 0.5,
+                }}
+            />
+
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black/50" />
+
+            {/* Grid overlay */}
+            <div className="absolute inset-0 pointer-events-none opacity-10">
+                <div className="absolute inset-0" style={{
+                    backgroundImage: `
+                        linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '50px 50px'
+                }}></div>
+            </div>
+
+            <div className="max-w-6xl mx-auto relative z-10">
                 <div className="text-center mb-16 space-y-4 animate-in fade-in duration-700">
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full mb-4">
                         <Sparkles className="w-4 h-4 text-blue-400" />

@@ -27,17 +27,45 @@ const Hero: React.FC = () => {
   }, [quotes.length]);
 
   return (
-    <RippleContainer className="relative min-h-screen flex items-center justify-center overflow-hidden" id="home">
-      {/* unified background: deep indigo + soft texture */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-950" />
+    <RippleContainer
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+      id="home"
+    >
+      {/* Animated Background with Drift Effect */}
+      <div
+        className="absolute inset-0 animate-bg-drift"
+        style={{
+          backgroundImage: "url('/src/assets/ai-network-bg.jpg')",
+          backgroundSize: '120%',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          width: '100%',
+          height: '100%',
+          opacity: 0.5,
+        }}
+      />
 
-      {/* soft texture overlay */}
-      <div className="absolute inset-0 -z-10 opacity-20 pointer-events-none bg-hero-texture" />
+      {/* Top animated gradient bar */}
+      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-600 via-red-800 to-red-600 animate-gradient-shift z-50"></div>
 
-      {/* subtle decorative orbs */}
-      <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <div className="absolute -left-16 top-16 w-72 h-72 rounded-full blur-3xl opacity-10 bg-gradient-to-r from-blue-500 to-cyan-400 animate-slow-float" />
-        <div className="absolute right-8 bottom-8 w-80 h-80 rounded-full blur-3xl opacity-8 bg-gradient-to-r from-purple-600 to-pink-500 animate-slower-float" />
+      {/* Dark overlay with pulsing effect */}
+      <div className="absolute inset-0 bg-black/30 animate-bg-pulse" />
+
+      {/* Animated scanline effect */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute w-full h-1 bg-gradient-to-b from-transparent via-red-500/20 to-transparent animate-scanline  blur-sm"></div>
+      </div>
+
+      {/* Grid overlay with glow */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px',
+          animation: 'glow 3s ease-in-out infinite'
+        }}></div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-28">
@@ -45,16 +73,16 @@ const Hero: React.FC = () => {
           {/* Content */}
           <div className="text-center space-y-6">
             {/* Creator Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 backdrop-blur-sm border border-indigo-400/30 rounded-full animate-in fade-in duration-700 shadow-lg shadow-indigo-500/20">
-              <div className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
-              <span className="text-sm text-indigo-200 font-medium">Creator of Eduverse</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-sm border border-red-400/30 rounded-full animate-in fade-in duration-700 shadow-lg shadow-red-500/20">
+              <div className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
+              <span className="text-sm text-red-200 font-medium">Creator of Eduverse</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight relative">
               {"Mohan Sai Krishna".split("").map((letter, index) => (
                 <span
                   key={index}
-                  className="inline-block animate-in fade-in slide-in-from-bottom-4 hover:text-indigo-300 transition-colors duration-200"
+                  className="inline-block animate-in fade-in slide-in-from-bottom-4 hover:text-red-300 transition-colors duration-200"
                   style={{
                     animationDelay: `${index * 0.05}s`,
                     animationDuration: '0.6s',
@@ -65,7 +93,7 @@ const Hero: React.FC = () => {
                 </span>
               ))}
               {/* Animated Highlight Bar */}
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-indigo-400 to-transparent rounded-full">
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-red-400 to-transparent rounded-full">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent rounded-full animate-pulse" />
               </div>
             </h1>
@@ -104,7 +132,7 @@ const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 pt-2">
               <Button
                 size="lg"
-                className="px-6 py-3 rounded-lg shadow-lg bg-gradient-to-r from-indigo-500 to-violet-500"
+                className="px-6 py-3 rounded-lg shadow-lg bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600"
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                 aria-label="Get in touch with Mohan"
               >
@@ -131,5 +159,3 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-
-

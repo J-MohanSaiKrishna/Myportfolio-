@@ -2,110 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Metallic Black & Red Theme */
 @layer base {
   :root {
-    --background: 215 25% 97%;
-    --foreground: 215 25% 12%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 12%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 12%;
-
-    --primary: 200 98% 39%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 85% 55%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 185 84% 25%;
+    --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 100%;
-
-    --muted: 215 20% 92%;
-    --muted-foreground: 215 15% 45%;
-
-    --accent: 180 75% 45%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 70% 45%;
     --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 215 20% 88%;
-    --input: 215 20% 88%;
-    --ring: 200 98% 39%;
-
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 0 85% 55%;
     --radius: 0.75rem;
-
-    /* Professional Portfolio Theme */
-    --gradient-start: 200 98% 39%;
-    --gradient-mid: 185 84% 35%;
-    --gradient-end: 170 75% 45%;
-    --hero-overlay: 215 30% 15%;
-    --section-bg: 0 0% 100%;
-    --section-alt: 210 20% 98%;
-    --gold-accent: 45 100% 51%;
-    
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 215 25% 12%;
-    --sidebar-primary: 200 98% 39%;
+    --gradient-start: 0 85% 55%;
+    --gradient-mid: 0 70% 45%;
+    --gradient-end: 0 60% 35%;
+    --hero-overlay: 0 0% 8%;
+    --section-bg: 0 0% 10%;
+    --section-alt: 0 0% 12%;
+    --gold-accent: 45 100% 55%;
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 85% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 20% 92%;
-    --sidebar-accent-foreground: 215 25% 12%;
-    --sidebar-border: 215 20% 88%;
-    --sidebar-ring: 200 98% 39%;
+    --sidebar-accent: 0 0% 20%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 0 85% 55%;
   }
 
   .dark {
-    --background: 215 30% 10%;
-    --foreground: 210 40% 98%;
-
-    --card: 215 28% 14%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 215 28% 14%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 200 98% 45%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 185 70% 30%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 215 25% 18%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 180 75% 50%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 215 25% 20%;
-    --input: 215 25% 20%;
-    --ring: 200 98% 45%;
-    
-    --gradient-start: 200 98% 45%;
-    --gradient-mid: 185 84% 40%;
-    --gradient-end: 170 75% 50%;
-    --hero-overlay: 215 30% 8%;
-    --section-bg: 215 28% 14%;
-    --section-alt: 215 25% 12%;
-    --gold-accent: 45 100% 55%;
-    
-    --sidebar-background: 215 30% 10%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 200 98% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 25% 18%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 215 25% 20%;
-    --sidebar-ring: 200 98% 45%;
+    /* Same values for dark mode */
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -115,55 +55,58 @@ All colors MUST be HSL.
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
-  /* Custom Scrollbar Styling */
+
+  /* Scrollbar styling */
   body {
     scrollbar-width: thin;
     scrollbar-color: rgba(99, 102, 241, 0.5) transparent;
   }
-  
+
   body::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
-  
+
   body::-webkit-scrollbar-track {
     background: transparent;
   }
-  
+
   body::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, rgba(99, 102, 241, 0.6), rgba(139, 92, 246, 0.6));
     border-radius: 10px;
     border: 2px solid transparent;
     background-clip: content-box;
   }
-  
+
   body::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.8));
     background-clip: content-box;
   }
-  
-  /* Scrollable areas */
+
   .scrollable::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
-  
+
   .scrollable::-webkit-scrollbar-thumb {
     background-color: rgba(99, 102, 241, 0.4);
     border-radius: 3px;
   }
-  
+
   .scrollable::-webkit-scrollbar-thumb:hover {
     background-color: rgba(99, 102, 241, 0.6);
   }
 
-  
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -174,61 +117,72 @@ All colors MUST be HSL.
   .gradient-text {
     @apply bg-gradient-to-r from-primary via-[hsl(var(--gradient-mid))] to-accent bg-clip-text text-transparent;
   }
-  
+
   .gradient-bg {
     @apply bg-gradient-to-br from-primary via-[hsl(var(--gradient-mid))] to-accent;
   }
-  
+
   .gradient-bg-alt {
     @apply bg-gradient-to-r from-secondary to-accent;
   }
-  
+
   .card-hover {
     @apply transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2;
   }
-  
+
   .section-gradient {
     background: linear-gradient(135deg, hsl(var(--section-bg)) 0%, hsl(var(--section-alt)) 100%);
   }
-  
+
   .text-shadow {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
-  
+
   .glass-effect {
     @apply bg-card/80 backdrop-blur-lg border border-border/50;
   }
 }
 
-/* Custom floating animation for background orbs */
+/* Animations */
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px) translateX(0px);
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
   }
+
   25% {
     transform: translateY(-20px) translateX(10px);
   }
+
   50% {
     transform: translateY(-40px) translateX(-10px);
   }
+
   75% {
     transform: translateY(-20px) translateX(15px);
   }
 }
 
 @keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0px);
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
+
   50% {
     transform: translateY(-30px);
   }
 }
 
 @keyframes shimmer {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.3;
   }
+
   50% {
     opacity: 0.7;
   }
@@ -238,15 +192,73 @@ All colors MUST be HSL.
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
-/* Utility classes for animations */
+/* Hero Background Effects */
+@keyframes bgDrift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(-30px, -15px) scale(1.08);
+  }
+
+  66% {
+    transform: translate(30px, 15px) scale(1.12);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes bgPulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3),
+      0 0 40px rgba(239, 68, 68, 0.2),
+      0 0 60px rgba(239, 68, 68, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.5),
+      0 0 60px rgba(239, 68, 68, 0.3),
+      0 0 90px rgba(239, 68, 68, 0.2);
+  }
+}
+
 .animate-float {
   animation: float 8s ease-in-out infinite;
 }
@@ -264,11 +276,19 @@ All colors MUST be HSL.
   background-size: 200% 200%;
 }
 
-/* Gradient text effect */
-.gradient-text {
-  @apply bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-transparent bg-clip-text;
+/* Hero background effect classes */
+.animate-bg-drift {
+  animation: bgDrift 25s ease-in-out infinite;
 }
 
-.gradient-bg {
-  @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700;
+.animate-bg-pulse {
+  animation: bgPulse 8s ease-in-out infinite;
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
 }

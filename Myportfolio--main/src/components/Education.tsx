@@ -34,8 +34,34 @@ const Education = () => {
   ];
 
   return (
-    <RippleContainer className="py-20 px-4 bg-gradient-to-br from-cyan-950/15 via-background to-cyan-900/10" id="education">
-      <div className="max-w-6xl mx-auto">
+    <RippleContainer className="py-20 px-4 relative overflow-hidden bg-black" id="education">
+      {/* Animated Background */}
+      <div
+        className="absolute inset-0 animate-bg-drift"
+        style={{
+          backgroundImage: "url('/src/assets/ai-network-bg.jpg')",
+          backgroundSize: '120%',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.7,
+        }}
+      />
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* Grid overlay */}
+      <div className="absolute inset-0 pointer-events-none opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 space-y-4 animate-in fade-in duration-700">
           <h2 className="text-4xl md:text-6xl font-bold">
             <span className="gradient-text">Academic Journey</span>
