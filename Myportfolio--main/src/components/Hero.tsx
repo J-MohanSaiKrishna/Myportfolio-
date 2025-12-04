@@ -28,45 +28,10 @@ const Hero: React.FC = () => {
 
   return (
     <RippleContainer
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
       id="home"
     >
-      {/* Animated Background with Drift Effect */}
-      <div
-        className="absolute inset-0 animate-bg-drift"
-        style={{
-          backgroundImage: "url('/src/assets/ai-network-bg.jpg')",
-          backgroundSize: '120%',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
-          width: '100%',
-          height: '100%',
-          opacity: 0.5,
-        }}
-      />
 
-      {/* Top animated gradient bar */}
-      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-600 via-red-800 to-red-600 animate-gradient-shift z-50"></div>
-
-      {/* Dark overlay with pulsing effect */}
-      <div className="absolute inset-0 bg-black/30 animate-bg-pulse" />
-
-      {/* Animated scanline effect */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute w-full h-1 bg-gradient-to-b from-transparent via-red-500/20 to-transparent animate-scanline  blur-sm"></div>
-      </div>
-
-      {/* Grid overlay with glow */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-          animation: 'glow 3s ease-in-out infinite'
-        }}></div>
-      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-28">
         <div className="flex justify-center items-center">

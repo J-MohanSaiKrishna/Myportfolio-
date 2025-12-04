@@ -65,32 +65,8 @@ const Skills = () => {
   ];
 
   return (
-    <RippleContainer className="py-20 px-4 relative overflow-hidden bg-black" id="skills">
-      {/* Animated Background */}
-      <div
-        className="absolute inset-0 animate-bg-drift"
-        style={{
-          backgroundImage: "url('/src/assets/ai-network-bg.jpg')",
-          backgroundSize: '120%',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
-          opacity: 0.5,
-        }}
-      />
+    <RippleContainer className="py-20 px-4 relative overflow-hidden" id="skills">
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50" />
-
-      {/* Grid overlay */}
-      <div className="absolute inset-0 pointer-events-none opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px'
-        }}></div>
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 space-y-4 animate-in fade-in duration-700">
